@@ -1,0 +1,12 @@
+[tool.poetry]
+package-mode = false
+
+[project]
+name = "cluster-scoring"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit",
+    "numpy",
+    "pandas",
+]
