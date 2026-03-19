@@ -7,8 +7,8 @@ st.title("Cluster Routing Visualiser")
 # --- Sidebar controls ---
 st.sidebar.header("Parameters")
 
-wC = st.sidebar.number_input("wC (cost weight)", value=1.0, step=0.1)
-wU = st.sidebar.number_input("wU (utilisation weight)", value=10.0, step=0.1)
+wC = st.sidebar.number_input("wC (cost weight)", value=5.0, step=0.1)
+wU = st.sidebar.number_input("wU (utilisation weight)", value=1.0, step=0.1)
 L = st.sidebar.number_input("L (mixing parameter)", value=0.5, min_value=0.0, max_value=1.0, step=0.05)
 ULimit = st.sidebar.number_input("ULimit (utilisation cap)", value=1000, min_value=2, step=1)
 
@@ -29,7 +29,7 @@ st.sidebar.subheader("Utilisation")
 
 U = []
 for i in range(4):
-    u_val = st.sidebar.slider(f"U[{i}] (utilisation)", min_value=0, max_value=int(ULimit) - 1, value=0, step=1)
+    u_val = st.sidebar.slider(f"U[{i}] (utilisation)", min_value=0, max_value=int(ULimit) - 1, value=500, step=1)
     U.append(u_val)
 
 # --- Computation ---
