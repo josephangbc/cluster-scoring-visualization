@@ -22,7 +22,7 @@ st.sidebar.subheader("Cost per EMR Unit")
 
 C = []
 for i in range(4):
-    c_val = st.sidebar.slider(f"C[{i}] (cost per EMR unit)", min_value=0.0, max_value=2.0, value=0.7, step=0.1)
+    c_val = st.sidebar.number_input(f"C[{i}] (cost per EMR unit)", min_value=0.0, max_value=2.0, value=0.7, step=0.01)
     C.append(c_val)
 
 st.sidebar.subheader("Utilisation")
@@ -83,7 +83,7 @@ summary = pd.DataFrame({
 })
 summary = summary.set_index("Cluster")
 st.dataframe(summary.style.format({
-    "C[i]": "{:.1f}",
+    "C[i]": "{:.2f}",
     "U[i]": "{:d}",
     "cluster_score[i]": "{:.4f}",
     "final_cluster_score[i]": "{:.4f}",
